@@ -13,7 +13,7 @@ dsn=settings.dsn
 
 engine=create_engine(f"oracle+oracledb://{user}:{password}@{dsn}")
 
-dbcon.Base.metadata.create_all(bind=engine)
+#dbcon.Base.metadata.create_all(bind=engine)
 
 def get_db():
     db=Session(engine)
