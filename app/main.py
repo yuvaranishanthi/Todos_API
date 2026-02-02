@@ -31,6 +31,7 @@ async def get_root():
      return {"response":"success"}
 
 @app.get('/userget')
+
 async def user_get(db:Annotated[Session, Depends(database.get_db)]):
      user_retrive=db.query(dbcon.users).all()
      return user_retrive
