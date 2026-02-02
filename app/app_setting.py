@@ -10,14 +10,13 @@ class Settings(BaseSettings):
     password:str
     dsn:str
 
-     #To see the secret_key type in terminal => python -c "import secrets; print(secrets.token_hex(32))"
+ #To see the secret_key type in terminal => python -c "import secrets; print(secrets.token_hex(32))"
     SECRET_KEY:str
     ALGORITHM:str
     ACCESS_TOKEN_EXPIRATION_MINUTES:int
 
     model_config = SettingsConfigDict(
-    env_file=BASE_DIR / ".env",
-    env_file_encoding="utf-8"
+    env_file=BASE_DIR / ".env"
 )
 
 
