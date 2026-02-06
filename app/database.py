@@ -11,7 +11,14 @@ user=settings.user
 password=settings.password
 dsn=settings.dsn
 
-engine=create_engine(f"oracle+oracledb://{user}:{password}@{dsn}")
+DATABASE_URL=f"oracle+oracledb://{user}:{password}@{dsn}"
+engine = create_engine(
+    DATABASE_URL, 
+    connect_args={
+        "expire_time": 2, 
+        "tcp_connect_timeout": 20
+    }
+)
 
 #dbcon.Base.metadata.create_all(bind=engine)
 
